@@ -14,28 +14,27 @@ class MainActivity : AppCompatActivity(), CellClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initRecView()
+        initRecyclerView()
     }
 
-    private fun fetchList(): ArrayList<String> {
-        val list = arrayListOf<String>()
-        list.add("Anton")
-        list.add("Sergei")
-        list.add("Andrey")
-        list.add("Arkadiy")
-        list.add("Alexei")
-        list.add("Michail")
-        list.add("Maxim")
-        list.add("Mikita")
-        list.add("Simon")
-        list.add("Yan")
-        list.add("Kirill")
+    private fun fetchList(): List<String> {
+        val list = listOf("Anton",
+                "Sergei",
+                "Andrey",
+                "Arkadiy",
+                "Alexei",
+                "Michail",
+                "Maxim",
+                "Mikita"  )
         return list
     }
 
-    private fun initRecView() {
+    private fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = MyAdapter(this, fetchList(), this)
+        binding.recyclerView.adapter = MyAdapter(
+                this,
+                fetchList(),
+                this)
     }
 
     override fun onCellClickListener(data: String) {
