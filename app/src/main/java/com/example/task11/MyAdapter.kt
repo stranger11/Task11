@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(private val list: List<String>,
                 private val onClick: (String) -> Unit,
-                //private val cellClickListener: CellClickListener
 ) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

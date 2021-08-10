@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = MyAdapter(list = fetchList(), onClick = {
+        binding.recyclerView.adapter = MyAdapter(list = fetchList()) {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-        })
+        }
     }
 }
